@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link
+	rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous"
+	/>
+	<style type="text/css">
+
+		#div1 {
+			width: 30px;
+			height: 30px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<p>Exibir a cor:
+	<div id="div1">
+	</div>
+	</p>
+
+	<label for="redInput">Cor Vermelho entre 0 e 255 
+		<input type="range" id="redInput" min="0" max="255" oninput="redOutput.value = redInput.value" onmouseup="mouseUP()"> </label>
+		<output id="redOutput"></output> 
+		<br>
+
+		<label for="greenInput">Cor Verde entre 0 e 255
+			<input type="range" id="greenInput" min="0" max="255" oninput="greenOutput.value = greenInput.value" onmouseup="mouseUP()"> </label>
+			<output id="greenOutput"></output> 
+			<br>
+
+			<label for="blue">Cor Azul entre 0 e 255
+				<input type="range" id="blueInput" min="0" max="255" oninput="blueOutput.value = blueInput.value" onmouseup="mouseUP()"> </label>
+				<output id="blueOutput"></output>
+
+
+				<script type="text/javascript">
+
+					window.addEventListener('load', mouseUP);
+
+					function mouseUP() {
+						r = redInput.value; 
+						g = greenInput.value; 
+						b = blueInput.value; 
+						var bgColor = "rgb(" + r + "," + g + "," + b + ")";
+						console.log(bgColor);
+						document.getElementById('div1').style.backgroundColor = bgColor;
+					}
+
+				</script>
+			</body>
+			</html>
